@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue-2.7.14.js"></script>
+</head>
+
+<body>
+    <!-- 准备好一个实例 -->
+    <div id="root">
+        <h1>插值语法</h1>
+        <h3>Hello, {{name}}.</h3>
+        <hr>
+        <h1>指令语法</h1>
+        <h3>我的博客名称是{{blog.name}}，地址是<a v-bind:href="blog.url.toUpperCase()">{{blog.url}}</a></h3>
+    </div>
+
+    <script>
+        const demo = new Vue({
+            el: '#root',
+            data: {
+                name: 'world',
+                blog: {
+                    name: '曼亚灿的个人博客',
+                    url: 'https://manyacan.com'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
